@@ -1,5 +1,6 @@
 # LazyFragment
 
+[ ![Download](https://api.bintray.com/packages/isanwenyu/maven/LazyFragment/images/download.svg) ](https://bintray.com/isanwenyu/maven/LazyFragment/_latestVersion)
 [![Platform](http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat)](http://developer.android.com/index.html)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
@@ -11,9 +12,26 @@ Android imitation WeChat lazy loading/lazy loading fragments. 安卓仿微信懒
 - Fragment Refreshing automatically after the time interval（Default 30s） 碎片见面一定时间间隔后自动刷新（默认30s）
 - User with ViewPager 和ViewPager一起使用
 
-## Quicked View
-![gif](gif/lazyfragment_demo.gif)
+## Getting Started
 
+- Gradle
+
+```
+compile 'com.isanwenyu.lazyfragment:lazyfragment:1.0.0'
+```
+- Maven
+
+```
+<dependency>
+  <groupId>com.isanwenyu.lazyfragment</groupId>
+  <artifactId>lazyfragment</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
+## Quick Preview
+![gif](gif/lazyfragment_demo.gif)
 
 ## Introduce
 
