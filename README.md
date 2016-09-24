@@ -4,13 +4,13 @@
 [![Platform](http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat)](http://developer.android.com/index.html)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-Android imitation WeChat lazy loading/lazy loading fragments. 安卓仿微信懒加载/延迟加载的实现
+Imitate WeChat lazy loading using fragments in Android. 安卓仿微信懒加载/延迟加载的实现
 
 ## Features 
 
 - LazyData 懒加载/延迟加载
-- Fragment Refreshing automatically after the time interval（Default 30s） 碎片见面一定时间间隔后自动刷新（默认30s）
-- User with ViewPager 和ViewPager一起使用
+- Fragments inherited the abstract class BaseLazyFragment will be automatically refresh in a certain time interval (the default 30 seconds). 继承抽象类BaseLazyFragment的碎片会在一定时间间隔(默认30秒)自动刷新
+- Use with ViewPager 和ViewPager一起使用
 
 ## Getting Started
 
@@ -35,10 +35,10 @@ compile 'com.isanwenyu.lazyfragment:lazyfragment:1.0.0'
 
 ## Introduce
 
-- Implement abstract BaseFragment optimization of fragments interface initialization process
-实现界面初始化过程优化后的超类BaseFragment
+- Inherit the abstrat class BaseFragment that interface initialization process optimized
+继承界面初始化过程优化后的超类BaseFragment
 
-- Implement LazyFragentControl interface 实现LazyFragentControl接口
+- Implement interface LazyFragentControl  实现LazyFragentControl接口
 
 
 Main Method | Description | Must Override 
@@ -102,19 +102,20 @@ public interface LazyFragmentControl {
 
 ## Usage
 
-1. Implement BaseLazyFragment interface then you can use [butterknife](http://jakewharton.github.io/butterknife/) directly 实现BaseLazyFragment接口,也可直接使用butterknife
+1. Inherit the abstrat class BaseLazyFragment that you can use [butterknife](http://jakewharton.github.io/butterknife/) directly 继承BaseLazyFragment抽象类,也可直接使用butterknife
 **A placeholder fragment containing a simple view.**
 
-2. Custom your SectionsPagerAdapter implement  FragmentPagerAdapter 实现FragmentPagerAdapter实现自定义的ViewPager适配器
+2. Custom your SectionsPagerAdapter inherited FragmentPagerAdapter 继承FragmentPagerAdapter实现自定义的ViewPager适配器
 
 3. mViewPager.setOffscreenPageLimit(2);//缓存两页
         mViewPager.setAdapter(mSectionsPagerAdapter);
         为ViewPager设置适配器并设置缓存2页（实际带上当前页面缓存3页）
 
 ## Dependencies
-* [butterknife](http://jakewharton.github.io/butterknife/)
-* [AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)
 
+* [BintrayUploadGradle](https://github.com/isanwenyu/BintrayUploadGradle) 上传repo到bintray以供添加到JCenter
+* [butterknife](http://jakewharton.github.io/butterknife/) 视图绑定框架
+* [AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView) 动画加载控件
 
 
 License

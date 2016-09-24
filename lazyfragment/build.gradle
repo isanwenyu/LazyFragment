@@ -32,7 +32,7 @@ ext {
     publishedGroupId = 'com.isanwenyu.lazyfragment'
     libraryName = 'LazyFragment'
     artifact = 'lazyfragment'
-    libraryDescription = 'Android imitation WeChat lazy loading fragments'
+    libraryDescription = 'Imitate WeChat lazy loading using fragments in Android'
     siteUrl = 'https://github.com/isanwenyu/LazyFragment'
     gitUrl = 'https://github.com/isanwenyu/LazyFragment.git'
     libraryVersion = '1.0.0'
