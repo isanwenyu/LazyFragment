@@ -25,23 +25,3 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
 
 }
-
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'LazyFragment'
-    publishedGroupId = 'com.isanwenyu.lazyfragment'
-    libraryName = 'LazyFragment'
-    artifact = 'lazyfragment'
-    libraryDescription = 'Imitate WeChat lazy loading using fragments in Android'
-    siteUrl = 'https://github.com/isanwenyu/LazyFragment'
-    gitUrl = 'https://github.com/isanwenyu/LazyFragment.git'
-    libraryVersion = '1.0.0'
-    developerId = 'isanwenyu'
-    developerName = 'isanwenyu'
-    developerEmail = 'isanwenyu@163.com'
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
-apply from: 'https://raw.githubusercontent.com/isanwenyu/BintrayUploadGradle/master/bintray_upload.gradle'
