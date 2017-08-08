@@ -1,0 +1,25 @@
+language: android
+sudo: false
+android:
+  components:
+  - build-tools-25.0.0
+  - android-25
+  - extra-android-m2repository
+  - extra-android-support
+script:
+- ./gradlew clean check assembleRelease
+before_install:
+- openssl aes-256-cbc -K $encrypted_b05b997abe3c_key -iv $encrypted_b05b997abe3c_iv
+  -in isanwenyu@github.jks.enc -out isanwenyu@github.jks -d
+- gem install fir-cli
+deploy:
+  provider: releases
+  api_key:
+    secure: ShbdQAXGUp9W9vtv2S3TxVqpVhWAxZz6iaS9hCCZu1xNy4ZNkdCGIplW4FYEo+LKXz9jydcvvg2lNECBxUD81sGEfk9zqm9i2+MZz7R+LjOctC4qncL5YqfmDL1l2TxjCQDNnBKA4PfNzbA+UDqgUm/ursydDhGgYPplU3xwweCLl9BftErtERBJDRWWrWKjpxNJ0IdP293cOQRB8m8Ve88FOJiTCrbnVkOcrt8fiVsJU/4XmDNbeh7C8H2ajRckGA66bPMUuvi6Xq4RJt4/mEiMWeJBoLWgKJPWFNkWDfH4SEt6luxb/5AUMCE8SMEKbh3bt4D8XnblM/3mUxs72ucnpkwQyOaPDFVyNmFuF1jFOmO+tBGiKAoUHg/0iZRAimxZV5fGdDqsEb0pMwjPjrfSaLlP8p08caIv8EYBruuoOD0LKkX7UYTlF/1GD0UAJ1dnxRRvf6v9zAaFJNLy7Cp789aFCwartF2AG7UcekxCyk3Fv8o4dCiEMtF9TQllNvM9UpTNTJSxhZllHcndLf2oFAUEnCMfmFMSFqIhRrcI/qpeGSW/Rcis9CRd+YWw5NtxXAUss81I03hhyNOWmZDs02b3mch78iua2maF0LkNKCsm84j71Cl+/mW6SwBOizseSGXbXqtvkr/TUHn58kYFo638a+so2ycCTmr3Ncg=
+  file: demo/build/outputs/apk/demo-release.apk
+  on:
+    repo: isanwenyu/LazyFragment
+    tags: true
+  skip_cleanup: true
+after_deploy:
+- fir p demo/build/outputs/apk/demo-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"

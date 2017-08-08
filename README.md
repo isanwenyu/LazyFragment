@@ -1,5 +1,6 @@
 # LazyFragment
 
+[![Build Status](https://travis-ci.org/isanwenyu/LazyFragment.svg?branch=master)](https://travis-ci.org/isanwenyu/LazyFragment)
 [ ![Download](https://api.bintray.com/packages/isanwenyu/maven/LazyFragment/images/download.svg) ](https://bintray.com/isanwenyu/maven/LazyFragment/_latestVersion)
 [![Platform](http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat)](http://developer.android.com/index.html)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
