@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 
 import com.wang.avi.AVLoadingIndicatorView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -33,7 +33,7 @@ interface LoadingControl {
  * </pre>
  */
 public class LoadingView extends FrameLayout implements LoadingControl {
-    @Bind(R.id.av_loading)
+    @BindView(R.id.av_loading)
     AVLoadingIndicatorView mLoadingView;
 
     public LoadingView(Context context) {
