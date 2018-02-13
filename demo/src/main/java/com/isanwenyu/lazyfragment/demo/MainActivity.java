@@ -131,9 +131,8 @@ public class MainActivity extends AppCompatActivity {
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
-        TextView textView = (TextView) getActivity().findViewById(R.id.section_label);
-        LoadingView loadingView = (LoadingView) getActivity().findViewById(R.id.loading_view);
-
+        TextView textView;
+        LoadingView loadingView;
 
         public PlaceholderFragment() {
         }
@@ -163,6 +162,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void initView() {
+            textView = (TextView) mView.findViewById(R.id.section_label);
+            loadingView = (LoadingView) mView.findViewById(R.id.loading_view);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
         }
 

@@ -33,7 +33,6 @@ interface LoadingControl {
  * </pre>
  */
 public class LoadingView extends FrameLayout implements LoadingControl {
-    @BindView(R.id.av_loading)
     AVLoadingIndicatorView mLoadingView;
 
     public LoadingView(Context context) {
@@ -55,7 +54,9 @@ public class LoadingView extends FrameLayout implements LoadingControl {
      * 初始化布局
      */
     private void initView() {
+
         LayoutInflater.from(getContext()).inflate(R.layout.include_loading_view, this);
+        mLoadingView = (AVLoadingIndicatorView) this.findViewById(R.id.av_loading);
         ButterKnife.bind(this);
         setBackgroundResource(android.R.color.white);
     }
