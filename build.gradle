@@ -3,6 +3,8 @@
 buildscript {
     repositories {
         jcenter()
+        mavenCentral() // add repository
+        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
@@ -15,6 +17,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
     }
     //解决android support包找不到问题
     tasks.withType(Javadoc).all { enabled = false }
