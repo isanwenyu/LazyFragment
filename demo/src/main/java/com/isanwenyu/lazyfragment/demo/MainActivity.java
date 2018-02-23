@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +20,7 @@ import android.widget.TextView;
 
 import com.isanwenyu.lazyfragment.BaseLazyFragment;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * <pre>
@@ -130,9 +131,7 @@ public class MainActivity extends AppCompatActivity {
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
-        @Bind(R.id.section_label)
         TextView textView;
-        @Bind(R.id.loading_view)
         LoadingView loadingView;
 
         public PlaceholderFragment() {
@@ -163,8 +162,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void initView() {
+            textView = (TextView) mView.findViewById(R.id.section_label);
+            loadingView = (LoadingView) mView.findViewById(R.id.loading_view);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-
         }
 
         @Override

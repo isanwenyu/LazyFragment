@@ -11,6 +11,7 @@ import com.isanwenyu.lazyfragment.interfaces.BackFragmentInterface;
 import com.isanwenyu.lazyfragment.interfaces.BaseViewControl;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * <pre>
@@ -24,6 +25,7 @@ public abstract class BaseFragment extends Fragment implements BaseViewControl,
     protected LayoutInflater mInflater; //视图填充器
 
     protected View mView;//用户设置的根布局
+    private Unbinder unbinder;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,7 +52,7 @@ public abstract class BaseFragment extends Fragment implements BaseViewControl,
                 mView = mInflater.inflate(getLayoutId(), container, false);
             }
         }
-        ButterKnife.bind(this, mView);
+        unbinder = ButterKnife.bind(this, mView);
         initView();
         initData();
         //缓存的rootView需要判断是否已经被加过parent， 如果有parent需要从parent删除，要不然会发生这个rootview已经有parent的错误。
@@ -66,7 +68,7 @@ public abstract class BaseFragment extends Fragment implements BaseViewControl,
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     @Override
