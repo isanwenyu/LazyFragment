@@ -5,8 +5,7 @@ android:
   components:
   - build-tools-26.0.2
   - android-26
-  - extra-android-m2repository
-  - extra-android-support
+  - extra
 before_script:
 - export GRADLE_OPTS="-XX:MaxPermSize=2048m -Xmx1536m"
 script:
