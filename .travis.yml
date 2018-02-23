@@ -3,8 +3,8 @@ jdk: oraclejdk8
 sudo: false
 android:
   components:
-  - build-tools-26.0.2
-  - android-26
+  - build-tools-24.0.2
+  - android-24
   - extra-android-m2repository
   - extra-android-support
 before_script:
